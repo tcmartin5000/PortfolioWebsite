@@ -1,9 +1,9 @@
 <template>
-
+<p>{{ props.textContent }}</p>
 </template>
 
 <script setup lang="ts">
-    defineProps<{
+    const props = defineProps<{
         textContent?: string
     }>()
 </script>
