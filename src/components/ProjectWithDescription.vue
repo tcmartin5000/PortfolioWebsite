@@ -1,9 +1,11 @@
 <template>
     <div class="project-with-description-class">
-    <h2>{{ props.title }}</h2>
-    <p>{{ props.content }}</p>
-    <a v-if="props.link != null" :href="props.link">Link to project</a>
-    <a v-if="props.sourceLink != null" :href="props.sourceLink">Link to source code</a>
+        <h2>{{ props.title }}</h2>
+        <p>{{ props.content }}</p>
+        <div class="pwd-links-class">
+        <a v-if="props.link != null" :href="props.link" class="pwd-link-item-class">View content/demo</a>
+        <a v-if="props.sourceLink != null" :href="props.sourceLink" class="pwd-link-item-class">View source code</a>
+        </div> 
     </div>
 </template>
 
@@ -19,7 +21,15 @@ const props = defineProps<ProjectContents>()
     padding: 10px 10px;
     border-radius: 15px;
     display: flex;
-    align-items: bottom baseline;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+}
+
+.pwd-links-class {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
 }
 </style>
