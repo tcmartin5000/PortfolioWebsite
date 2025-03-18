@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <h1>Trevor Martin - Software Developer</h1>
+        <div class="separator"></div>
+        <p>{{ description }}</p>
+    </div>
+</template>
+
+<script setup lang="ts">
+const description = "I'm a Computer Science student with four years of classes under my belt. I'm a quick learner with experience in a wide variety of technologies, and I've worked on projects both solo and in teams. On this page, you can see some of my work, including both class assignments and personal projects."
+</script>
+
+<style scoped>
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.separator {
+    margin-top: 10px;
+}
+</style>

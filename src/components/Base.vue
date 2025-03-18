@@ -1,23 +1,25 @@
 <template>
-    <h1>Trevor Martin - Software Developer</h1>
-    <TextContent :text-content="description" />
+    <div>
+        
+            <li v-for="project in projects" :key="project.id">
+                <ProjectWithDescription :ms-delay="msDelay * project.id" :project-contents="project" />
+            </li>
+        
 
-    <li v-for="project in projects" :key="project.id">
-        <ProjectWithDescription :ms-delay="msDelay * project.id" :project-contents="project" />
-    </li>
-
-    <button @click="addProject">Add project</button>
+    </div>
 </template>
 
 <script setup lang="ts">
-import TextContent from './TextContent.vue';
 import ProjectWithDescription from './ProjectWithDescription.vue';
 import type ProjectContents from '@/types/ProjectContents';
 import { ref, onBeforeMount, onMounted, type Ref } from 'vue';
 
+const props = defineProps<{
+    parentHeight: number
+}>()
+
 const projects: Ref<ProjectContents[]> = ref([]);
 const msDelay: number = 200
-const description = "I'm a Computer Science student with four years of classes under my belt. I'm a quick learner with experience in a wide variety of technologies, and I've worked on projects both solo and in teams. On this page, you can see some of my work, including both class assignments and personal projects."
 
 onMounted(() => {
     projects.value.push(
@@ -36,15 +38,11 @@ onMounted(() => {
 
 })
 
-
-function addProject() {
-    projects.value.push({ id: projects.value.length, title: "test", content: "test" })
-}
-
 </script>
 
 <style scoped>
 li {
     list-style-type: none;
 }
+
 </style>
