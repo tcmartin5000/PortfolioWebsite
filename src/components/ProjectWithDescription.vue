@@ -14,7 +14,7 @@ import type ProjectContents from '@/types/ProjectContents';
 const props = defineProps<ProjectContents>()
 </script>
 
-<style>
+<style scoped>
 .project-with-description-class {
     background: #242;
     margin: 25px auto;

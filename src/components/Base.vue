@@ -1,12 +1,10 @@
 <template>
     <h1>Trevor Martin - Software Developer</h1>
     <TextContent :text-content="description" />
-    <ul v-for="project in projects">
-        <li>
-            <ProjectWithDescription :title="project.title" :link="project.link" :source-link="project.sourceLink"
-                :content="project.content" />
-        </li>
-    </ul>
+    <li v-for="project in projects">
+        <ProjectWithDescription :title="project.title" :link="project.link" :source-link="project.sourceLink"
+            :content="project.content" />
+    </li>
 </template>
 
 <script setup lang="ts">
@@ -31,4 +29,8 @@ const projects: ProjectContents[] = [
 const description = "I'm a Computer Science student with four years of classes under my belt. I'm a quick learner with experience in a wide variety of technologies, and I've worked on projects both solo and in teams. On this page, you can see some of my work, including both class assignments and personal projects."
 </script>
 
-<style></style>
+<style scoped>
+li {
+    list-style-type: none;
+}
+</style>
