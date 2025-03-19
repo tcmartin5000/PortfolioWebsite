@@ -3,11 +3,25 @@
         <h1>Trevor Martin - Software Developer</h1>
         <div class="separator"></div>
         <p>{{ description }}</p>
+        <div class="separator"></div>
+        <a :href="email">
+        <div class="contact-row">
+            
+            <span class="material-symbols-outlined">
+                mail
+            </span>
+            <p>Contact</p>
+            
+        </div>
+    </a>
+
+
     </div>
 </template>
 
 <script setup lang="ts">
 const description = "I'm a Computer Science student with four years of classes under my belt. I'm a quick learner with experience in a wide variety of technologies, and I've worked on projects both solo and in teams. On this page, you can see some of my work, including both class assignments and personal projects."
+const email = "mailto:contact@trevorcmartin.com"
 </script>
 
 <style scoped>
@@ -28,5 +42,14 @@ h1 {
 
 .separator {
     margin-top: 10px;
+}
+
+.material-symbols-outlined {
+    padding-right: 10px;
+}
+
+.contact-row {
+    display: flex;
+    flex-direction: row;
 }
 </style>
