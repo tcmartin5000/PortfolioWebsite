@@ -4,16 +4,23 @@
         <div class="separator"></div>
         <p>{{ description }}</p>
         <div class="separator"></div>
-        <a :href="email">
+
         <div class="contact-row">
-            
-            <span class="material-symbols-outlined">
-                mail
-            </span>
-            <p>Contact</p>
-            
+            <a :href="email" class="icon-block">
+                <span class="material-symbols-outlined">
+                    mail
+                </span>
+                <p>Email</p>
+            </a>
+            <a :href="linkedin" class="icon-block">
+                <span class="material-symbols-outlined">
+                    work
+                </span>
+                <p>LinkedIn</p>
+            </a>
+
         </div>
-    </a>
+
 
 
     </div>
@@ -22,6 +29,7 @@
 <script setup lang="ts">
 const description = "I'm a Computer Science student with four years of classes under my belt. I'm a quick learner with experience in a wide variety of technologies, and I've worked on projects both solo and in teams. On this page, you can see some of my work, including both class assignments and personal projects."
 const email = "mailto:contact@trevorcmartin.com"
+const linkedin = "https://www.linkedin.com/in/trevor-c-martin/"
 </script>
 
 <style scoped>
@@ -49,6 +57,13 @@ h1 {
 }
 
 .contact-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.icon-block {
     display: flex;
     flex-direction: row;
 }
